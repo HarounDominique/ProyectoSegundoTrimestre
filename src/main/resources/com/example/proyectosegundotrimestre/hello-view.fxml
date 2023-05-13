@@ -46,8 +46,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField GridPane.columnIndex="1" />
-                  <Label text="Nombre" />
+                  <TextField fx:id="nombreTextField" GridPane.columnIndex="1" />
+                  <Label text="Nombre" GridPane.halignment="LEFT">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="2">
@@ -59,7 +66,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
+                  <Label text="Apellidos" GridPane.halignment="LEFT">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="apellidosTextField" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="3">
@@ -71,8 +86,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
-                  <TextField GridPane.columnIndex="1" />
+                  <Label text="NIF" GridPane.halignment="LEFT">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nifTextField" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="4">
@@ -84,7 +106,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
+                  <Label text="Código postal" GridPane.halignment="LEFT">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="codigoPostalTextField" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="5">
@@ -96,7 +126,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
+                  <Label text="Correo electrónico" GridPane.halignment="LEFT">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="correoElectronicoTextField" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </children>
@@ -144,7 +182,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Mostrar" GridPane.halignment="CENTER">
+                  <Button fx:id="mostrarButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Mostrar" GridPane.halignment="CENTER">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -152,7 +190,7 @@
                         <Insets bottom="15.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancelar" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                  <Button fx:id="cancelarButton" mnemonicParsing="false" onAction="#onCancelarButtonClick" prefHeight="25.0" prefWidth="84.0" text="Cancelar" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
                         <Font size="13.0" />
                      </font>
