@@ -42,71 +42,99 @@ public class HelloController {
         nifTextField.setText("");
         codigoPostalTextField.setText("");
         correoElectronicoTextField.setText("");
+        //limpiar modulos
+        diCheckBox.setSelected(false);
+        adCheckBox.setSelected(false);
+        bdCheckBox.setSelected(false);
+        progCheckBox.setSelected(false);
+        pmCheckBox.setSelected(false);
+        //resetear horas modulos alumno
+        a.setHorasModulos(0);
     }
     //EVENTOS
     @FXML
     protected void onDiCheck() {
         //anhade las horas correspondientes al total de horas
-        a.setHorasModulos(a.getHorasModulos()+100);
-        if(!a.comprobarHoras()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
-            alert.setHeaderText(null);
-            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
+        if (diCheckBox.isSelected()) {
+            a.setHorasModulos(a.getHorasModulos()+100);
+            if(!a.comprobarHoras()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+                alert.setHeaderText(null);
+                alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            }
+        } else {
+            a.setHorasModulos(a.getHorasModulos()-100);
         }
     }
     @FXML
     protected void onAdCheck() {
         //anhade las horas correspondientes al total de horas
-        a.setHorasModulos(a.getHorasModulos()+100);
-        if(!a.comprobarHoras()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
-            alert.setHeaderText(null);
-            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
+        if (adCheckBox.isSelected()) {
+            a.setHorasModulos(a.getHorasModulos()+100);
+            if(!a.comprobarHoras()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+                alert.setHeaderText(null);
+                alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            }
+        } else {
+            a.setHorasModulos(a.getHorasModulos()-100);
         }
     }
     @FXML
     protected void onBdCheck() {
         //anhade las horas correspondientes al total de horas
-        a.setHorasModulos(a.getHorasModulos()+100);
-        if(!a.comprobarHoras()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
-            alert.setHeaderText(null);
-            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
+        if (bdCheckBox.isSelected()) {
+            a.setHorasModulos(a.getHorasModulos()+100);
+            if(!a.comprobarHoras()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+                alert.setHeaderText(null);
+                alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            }
+        } else {
+            a.setHorasModulos(a.getHorasModulos()-100);
         }
     }
     @FXML
     protected void onProgCheck() {
         //anhade las horas correspondientes al total de horas
-        a.setHorasModulos(a.getHorasModulos()+100);
-        if(!a.comprobarHoras()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
-            alert.setHeaderText(null);
-            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
+        if (progCheckBox.isSelected()) {
+            a.setHorasModulos(a.getHorasModulos()+100);
+            if(!a.comprobarHoras()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+                alert.setHeaderText(null);
+                alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            }
+        } else {
+            a.setHorasModulos(a.getHorasModulos()-100);
         }
     }
     @FXML
     protected void onPmCheck() {
         //anhade las horas correspondientes al total de horas
-        a.setHorasModulos(a.getHorasModulos()+100);
-        if(!a.comprobarHoras()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
-            alert.setHeaderText(null);
-            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
+        if (pmCheckBox.isSelected()) {
+            a.setHorasModulos(a.getHorasModulos()+100);
+            if(!a.comprobarHoras()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+                alert.setHeaderText(null);
+                alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas.");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            }
+        } else {
+            a.setHorasModulos(a.getHorasModulos()-100);
         }
     }
 }
