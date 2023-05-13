@@ -137,6 +137,61 @@
                   <TextField fx:id="correoElectronicoTextField" GridPane.columnIndex="1" />
                </children>
             </GridPane>
+            <CheckBox mnemonicParsing="false" text="Diseño de interfaces" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Acceso a datos" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Programación" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Base de datos" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Programación multimedia" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </CheckBox>
          </children>
       </GridPane>
    </center>
