@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController {
     //BOTONES
@@ -102,9 +103,12 @@ public class HelloController {
             System.out.println(a.toString());
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view2.fxml"));
-                HelloController2 controller = new HelloController2(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
-                loader.setController(controller);
+                //HelloController2 controller = new HelloController2(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
+                //loader.setController(controller);
                 Scene scene = new Scene(loader.load());
+                var controller = (HelloController2) loader.getController();
+                controller.setValues(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
+
                 Stage stage = new Stage();
                 stage.setTitle("Datos alumno");
                 stage.setScene(scene);

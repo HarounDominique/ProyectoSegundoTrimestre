@@ -12,17 +12,17 @@ public class HelloController2 {
 
     //DATOS PERSONALES
     @FXML
-    private TextField nombre;
+    private Label nombre = new Label("");
     @FXML
-    private TextField apellidos;
+    private Label apellidos;
     @FXML
-    private TextField nif;
+    private Label nif;
     @FXML
-    private TextField codigoPostal;
+    private Label codigoPostal;
     @FXML
-    private TextField correoElectronico;
+    private Label correoElectronico;
     @FXML
-    private TextField modulos;
+    private Label modulos;
 
     private String nombreTexto;
     private String apellidosTexto;
@@ -38,14 +38,19 @@ public class HelloController2 {
         System.exit(1);
     }
 
-    public HelloController2(String nombreTexto, String apellidosTexto, String nifTexto, String cpTexto, String correoTexto, ArrayList<String> modulosListaParametro) {
-        this.nombreTexto = nombreTexto;
+    public HelloController2() {
+
+    }
+
+    public void setValues(String nombreTexto, String apellidosTexto, String nifTexto, String cpTexto, String correoTexto, ArrayList<String> modulosListaParametro){
+        this.nombre.setText(nombreTexto);
         this.apellidosTexto = apellidosTexto;
         this.nifTexto = nifTexto;
         this.cpTexto = cpTexto;
         this.correoTexto = correoTexto;
-        for(int i =0; i<modulosListaParametro.size();i++) {
-            this.modulosLista.add(modulosListaParametro.get(i).toString());
-        }
+        modulos.setText(String.join(", ", modulosListaParametro));
     }
+
 }
+
+
