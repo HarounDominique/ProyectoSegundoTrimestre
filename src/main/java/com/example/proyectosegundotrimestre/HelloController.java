@@ -1,7 +1,13 @@
 package com.example.proyectosegundotrimestre;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HelloController {
     //BOTONES
@@ -65,35 +71,47 @@ public class HelloController {
             alert.setContentText("Para poder realizar la matrícula todos los campos deben ser cubiertos.");
 
             alert.showAndWait();
-        }else if(a.getHorasModulos()>300){
+        } else if (a.getHorasModulos() > 300) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
             alert.setHeaderText(null);
             alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas. Para poder realizar la matrícula no deben superarse las 300 horas.");
 
             alert.showAndWait();
-        }else{
+        } else {
             a.setNombre(nombreTextField.getText());
             a.setApellidos(apellidosTextField.getText());
             a.setNif(nifTextField.getText());
             a.setCodigoPostal(codigoPostalTextField.getText());
             a.setCorreoElectronico(correoElectronicoTextField.getText());
-            if(diCheckBox.isSelected()){
+            if (diCheckBox.isSelected()) {
                 a.getModulos().add("Diseño de interfaces");
             }
-            if(adCheckBox.isSelected()){
+            if (adCheckBox.isSelected()) {
                 a.getModulos().add("Acceso a datos");
             }
-            if(bdCheckBox.isSelected()){
+            if (bdCheckBox.isSelected()) {
                 a.getModulos().add("Base de datos");
             }
-            if(progCheckBox.isSelected()){
+            if (progCheckBox.isSelected()) {
                 a.getModulos().add("Programación");
             }
-            if(pmCheckBox.isSelected()){
+            if (pmCheckBox.isSelected()) {
                 a.getModulos().add("Programación multimedia");
             }
             System.out.println(a.toString());
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view2.fxml"));
+                HelloController2 controller = new HelloController2(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
+                loader.setController(controller);
+                Scene scene = new Scene(loader.load());
+                Stage stage = new Stage();
+                stage.setTitle("Datos alumno");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
