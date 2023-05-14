@@ -44,10 +44,10 @@ public class HelloController2 {
 
     public void setValues(String nombreTexto, String apellidosTexto, String nifTexto, String cpTexto, String correoTexto, ArrayList<String> modulosListaParametro){
         this.nombre.setText(nombreTexto);
-        this.apellidosTexto = apellidosTexto;
-        this.nifTexto = nifTexto;
-        this.cpTexto = cpTexto;
-        this.correoTexto = correoTexto;
+        this.apellidos.setText(apellidosTexto);
+        this.nif.setText(nifTexto);
+        this.codigoPostal.setText(cpTexto);
+        this.correoElectronico.setText(correoTexto);
         modulos.setText(String.join(", ", modulosListaParametro));
     }
 
