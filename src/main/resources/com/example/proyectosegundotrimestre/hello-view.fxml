@@ -237,7 +237,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="mostrarButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Mostrar" GridPane.halignment="CENTER">
+                  <Button fx:id="mostrarButton" mnemonicParsing="false" onAction="#onMostrarButtonClick" prefHeight="25.0" prefWidth="87.0" text="Mostrar" GridPane.halignment="CENTER">
                      <font>
                         <Font size="13.0" />
                      </font>

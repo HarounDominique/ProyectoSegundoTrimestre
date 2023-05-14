@@ -31,9 +31,11 @@ public class HelloController {
     private CheckBox bdCheckBox;
     @FXML
     private CheckBox pmCheckBox;
-
+    //INSTANCIA ALUMNO
     Alumno a = new Alumno();
 
+
+    //EVENTOS
     @FXML
     protected void onCancelarButtonClick() {
         //limpiar contenido de text fields
@@ -51,13 +53,56 @@ public class HelloController {
         //resetear horas modulos alumno
         a.setHorasModulos(0);
     }
-    //EVENTOS
+
+    @FXML
+    protected void onMostrarButtonClick() {
+        if (nombreTextField.getText().isBlank() || apellidosTextField.getText().isBlank() ||
+                nifTextField.getText().isBlank() || codigoPostalTextField.getText().isBlank() ||
+                correoElectronicoTextField.getText().isBlank()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Datos personales incompletos");
+            alert.setHeaderText(null);
+            alert.setContentText("Para poder realizar la matrícula todos los campos deben ser cubiertos.");
+
+            alert.showAndWait();
+        }else if(a.getHorasModulos()>300){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
+            alert.setHeaderText(null);
+            alert.setContentText("El máximo de horas totales es 300, los módulos seleccionados no deben exceder esta cantidad de horas. Para poder realizar la matrícula no deben superarse las 300 horas.");
+
+            alert.showAndWait();
+        }else{
+            a.setNombre(nombreTextField.getText());
+            a.setApellidos(apellidosTextField.getText());
+            a.setNif(nifTextField.getText());
+            a.setCodigoPostal(codigoPostalTextField.getText());
+            a.setCorreoElectronico(correoElectronicoTextField.getText());
+            if(diCheckBox.isSelected()){
+                a.getModulos().add("Diseño de interfaces");
+            }
+            if(adCheckBox.isSelected()){
+                a.getModulos().add("Acceso a datos");
+            }
+            if(bdCheckBox.isSelected()){
+                a.getModulos().add("Base de datos");
+            }
+            if(progCheckBox.isSelected()){
+                a.getModulos().add("Programación");
+            }
+            if(pmCheckBox.isSelected()){
+                a.getModulos().add("Programación multimedia");
+            }
+            System.out.println(a.toString());
+        }
+    }
+
     @FXML
     protected void onDiCheck() {
         //anhade las horas correspondientes al total de horas
         if (diCheckBox.isSelected()) {
-            a.setHorasModulos(a.getHorasModulos()+100);
-            if(!a.comprobarHoras()){
+            a.setHorasModulos(a.getHorasModulos() + 100);
+            if (!a.comprobarHoras()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
                 alert.setHeaderText(null);
@@ -66,15 +111,16 @@ public class HelloController {
                 alert.showAndWait();
             }
         } else {
-            a.setHorasModulos(a.getHorasModulos()-100);
+            a.setHorasModulos(a.getHorasModulos() - 100);
         }
     }
+
     @FXML
     protected void onAdCheck() {
         //anhade las horas correspondientes al total de horas
         if (adCheckBox.isSelected()) {
-            a.setHorasModulos(a.getHorasModulos()+100);
-            if(!a.comprobarHoras()){
+            a.setHorasModulos(a.getHorasModulos() + 100);
+            if (!a.comprobarHoras()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
                 alert.setHeaderText(null);
@@ -83,15 +129,16 @@ public class HelloController {
                 alert.showAndWait();
             }
         } else {
-            a.setHorasModulos(a.getHorasModulos()-100);
+            a.setHorasModulos(a.getHorasModulos() - 100);
         }
     }
+
     @FXML
     protected void onBdCheck() {
         //anhade las horas correspondientes al total de horas
         if (bdCheckBox.isSelected()) {
-            a.setHorasModulos(a.getHorasModulos()+100);
-            if(!a.comprobarHoras()){
+            a.setHorasModulos(a.getHorasModulos() + 100);
+            if (!a.comprobarHoras()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
                 alert.setHeaderText(null);
@@ -100,15 +147,16 @@ public class HelloController {
                 alert.showAndWait();
             }
         } else {
-            a.setHorasModulos(a.getHorasModulos()-100);
+            a.setHorasModulos(a.getHorasModulos() - 100);
         }
     }
+
     @FXML
     protected void onProgCheck() {
         //anhade las horas correspondientes al total de horas
         if (progCheckBox.isSelected()) {
-            a.setHorasModulos(a.getHorasModulos()+100);
-            if(!a.comprobarHoras()){
+            a.setHorasModulos(a.getHorasModulos() + 100);
+            if (!a.comprobarHoras()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
                 alert.setHeaderText(null);
@@ -117,15 +165,16 @@ public class HelloController {
                 alert.showAndWait();
             }
         } else {
-            a.setHorasModulos(a.getHorasModulos()-100);
+            a.setHorasModulos(a.getHorasModulos() - 100);
         }
     }
+
     @FXML
     protected void onPmCheck() {
         //anhade las horas correspondientes al total de horas
         if (pmCheckBox.isSelected()) {
-            a.setHorasModulos(a.getHorasModulos()+100);
-            if(!a.comprobarHoras()){
+            a.setHorasModulos(a.getHorasModulos() + 100);
+            if (!a.comprobarHoras()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Se ha superado el límite de horas en la selección de módulos");
                 alert.setHeaderText(null);
@@ -134,7 +183,7 @@ public class HelloController {
                 alert.showAndWait();
             }
         } else {
-            a.setHorasModulos(a.getHorasModulos()-100);
+            a.setHorasModulos(a.getHorasModulos() - 100);
         }
     }
 }

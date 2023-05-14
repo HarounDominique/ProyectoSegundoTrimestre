@@ -1,5 +1,7 @@
 package com.example.proyectosegundotrimestre;
 
+import java.util.ArrayList;
+
 public class Alumno {
     private final int MAXIMO_HORAS = 300;
 
@@ -9,6 +11,7 @@ public class Alumno {
     private String nif;
     private String codigoPostal;
     private String correoElectronico;
+    private ArrayList<String> modulos = new ArrayList<>();
 
     public Alumno(int horasModulos, String nombre, String apellidos, String nif, String codigoPostal, String correoElectronico) {
         this.horasModulos = horasModulos;
@@ -70,11 +73,30 @@ public class Alumno {
         this.correoElectronico = correoElectronico;
     }
 
+    public ArrayList<String> getModulos() {
+        return modulos;
+    }
+    public void setModulos(ArrayList<String> modulos) {
+        this.modulos = modulos;
+    }
     public boolean comprobarHoras(){
         boolean horasValidas = false;
         if(getHorasModulos()<=MAXIMO_HORAS){
             horasValidas=true;
         }
         return horasValidas;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "horasModulos=" + horasModulos +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", nif='" + nif + '\'' +
+                ", codigoPostal='" + codigoPostal + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", modulos=" + modulos +
+                '}';
     }
 }
