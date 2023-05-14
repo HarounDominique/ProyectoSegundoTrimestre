@@ -100,11 +100,9 @@ public class HelloController {
             if (pmCheckBox.isSelected()) {
                 a.getModulos().add("Programación multimedia");
             }
-            System.out.println(a.toString());
+
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view2.fxml"));
-                //HelloController2 controller = new HelloController2(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
-                //loader.setController(controller);
                 Scene scene = new Scene(loader.load());
                 var controller = (HelloController2) loader.getController();
                 controller.setValues(a.getNombre(), a.getApellidos(), a.getNif(), a.getCodigoPostal(), a.getCorreoElectronico(), a.getModulos());
