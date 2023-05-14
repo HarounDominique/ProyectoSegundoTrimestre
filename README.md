@@ -5,6 +5,7 @@ This is a JavaFX application that simulates the enrollment process for a student
 ## Screenshots
 
 ![Screenshot1](https://i.ibb.co/fD62kSF/SS1.png)
+
 ![Screenshot2](https://i.ibb.co/1f6C3wB/SS2.png)
 
 ## Getting Started
